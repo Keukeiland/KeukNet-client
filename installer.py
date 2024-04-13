@@ -10,7 +10,7 @@ import sys
 from sys import exit
 
 # Config values
-HOST = "keuk.net"
+HOST = "https://github.com/keukeiland/keuknet-client/releases/latest/download/"
 DOWNLOAD_ARGS = "--no-progress-meter --fail"
 OTHER_DESKTOP_FILES_DIR = "/usr/share/applications"
 OTHER_BINARIES_DIR = "/usr/bin"
@@ -48,7 +48,7 @@ if OTHER:
 if WINDOWS:
     os.system("mkdir \"%TEMP%\\keuknetinstaller\"")
     os.system(f"curl -o \"%TEMP%\\keuknetinstaller\\wireguard.exe\" https://download.wireguard.com/windows-client/wireguard-installer.exe {DOWNLOAD_ARGS}")
-    os.system(f"curl -o \"%TEMP%\\keuknetinstaller\\keuknet.exe\" https://{HOST}/keuknet-client/keuknet.exe {DOWNLOAD_ARGS}")
+    os.system(f"curl -o \"%TEMP%\\keuknetinstaller\\keuknet.exe\" {HOST}keuknet.exe {DOWNLOAD_ARGS}")
     os.system("mkdir \"%PROGRAMFILES%\\KeukNet\"")
 if OTHER:
     if not os.path.isdir(OTHER_DESKTOP_FILES_DIR) or not os.path.isdir(OTHER_BINARIES_DIR):
@@ -70,8 +70,8 @@ if WINDOWS:
     os.system("reg add HKCR\\keuknet\\shell\\open /f")
     os.system("reg add HKCR\\keuknet\\shell\\open\\command /d \"\\\"C:\\Program Files\\KeukNet\\keuknet.exe\\\" \"%1\"\" /f")
 if OTHER:
-    os.system(f"curl -o \"{OTHER_DESKTOP_FILES_DIR}/keuknet.desktop\" https:/{HOST}/keuknet-client/keuknet.desktop {DOWNLOAD_ARGS}")
-    os.system(f"curl -o \"{OTHER_BINARIES_DIR}/keuknet.py\" https:/{HOST}/keuknet-client/keuknet.py {DOWNLOAD_ARGS}")
+    os.system(f"curl -o \"{OTHER_DESKTOP_FILES_DIR}/keuknet.desktop\" {HOST}keuknet.desktop {DOWNLOAD_ARGS}")
+    os.system(f"curl -o \"{OTHER_BINARIES_DIR}/keuknet.py\" {HOST}keuknet.py {DOWNLOAD_ARGS}")
     os.system(f"chmod +x \"{OTHER_BINARIES_DIR}/keuknet.py\"")
     os.system("xdg-mime default keuknet.desktop x-scheme-handler/keuknet")
 
