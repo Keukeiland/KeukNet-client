@@ -11,7 +11,7 @@ from sys import exit
 
 # Config values
 HOST = "https://github.com/keukeiland/keuknet-client/releases/latest/download/"
-DOWNLOAD_ARGS = "--no-progress-meter --fail"
+DOWNLOAD_ARGS = "--no-progress-meter --fail -L"
 OTHER_DESKTOP_FILES_DIR = "/usr/share/applications"
 OTHER_BINARIES_DIR = "/usr/bin"
 OTHER_DEPENDENCIES = {

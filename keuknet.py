@@ -13,7 +13,7 @@ from sys import exit
 
 DEBUG = True
 HOST = "keuk.net"
-DOWNLOAD_ARGS = "--no-progress-meter --fail"
+DOWNLOAD_ARGS = "--no-progress-meter --fail -L"
 
 # Constants
 WINDOWS = os.name == 'nt'
